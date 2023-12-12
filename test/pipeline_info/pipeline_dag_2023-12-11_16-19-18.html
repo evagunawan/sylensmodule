@@ -1,0 +1,85 @@
+<!--
+  ~ Copyright 2013-2023, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+flowchart TB
+    subgraph " "
+    v0["Channel.fromPath"]
+    v4["samplesheet"]
+    v19["ch_workflow_summary"]
+    v22["ch_methods_description"]
+    end
+    subgraph NFCORE_SYLENSMODULE
+    subgraph SYLENSMODULE
+    subgraph INPUT_CHECK
+    v5([SAMPLESHEET_CHECK])
+    v6(( ))
+    end
+    v9([FASTQC])
+    v15([CUSTOM_DUMPSOFTWAREVERSIONS])
+    v34([MULTIQC])
+    v8(( ))
+    v20(( ))
+    v31(( ))
+    v32(( ))
+    v33(( ))
+    v38(( ))
+    end
+    end
+    subgraph " "
+    v10[" "]
+    v16[" "]
+    v17[" "]
+    v35[" "]
+    v36[" "]
+    v37[" "]
+    v39[" "]
+    end
+    v0 --> v31
+    v4 --> v5
+    v5 --> v6
+    v5 --> v8
+    v6 --> v9
+    v9 --> v10
+    v9 --> v8
+    v9 --> v20
+    v8 --> v15
+    v15 --> v17
+    v15 --> v16
+    v15 --> v20
+    v19 --> v20
+    v22 --> v20
+    v20 --> v34
+    v31 --> v34
+    v32 --> v34
+    v33 --> v34
+    v34 --> v37
+    v34 --> v36
+    v34 --> v35
+    v34 --> v38
+    v38 --> v39
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</body>
+</html>

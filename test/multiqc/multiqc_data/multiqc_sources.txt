@@ -1,0 +1,7 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	SAMPLE1_PE_T1_1	/home/gunawaea/Documents/nf-core-sylensmodule/work/66/adf330cb667471f40141dc0818a9eb/4/SAMPLE1_PE_T1_1_fastqc.zip
+FastQC	all_sections	SAMPLE1_PE_T1_2	/home/gunawaea/Documents/nf-core-sylensmodule/work/66/adf330cb667471f40141dc0818a9eb/5/SAMPLE1_PE_T1_2_fastqc.zip
+FastQC	all_sections	SAMPLE3_SE_T1	/home/gunawaea/Documents/nf-core-sylensmodule/work/66/adf330cb667471f40141dc0818a9eb/6/SAMPLE3_SE_T1_fastqc.zip
+FastQC	all_sections	SAMPLE3_SE_T2	/home/gunawaea/Documents/nf-core-sylensmodule/work/66/adf330cb667471f40141dc0818a9eb/7/SAMPLE3_SE_T2_fastqc.zip
+FastQC	all_sections	SAMPLE2_PE_T1_1	/home/gunawaea/Documents/nf-core-sylensmodule/work/66/adf330cb667471f40141dc0818a9eb/8/SAMPLE2_PE_T1_1_fastqc.zip
+FastQC	all_sections	SAMPLE2_PE_T1_2	/home/gunawaea/Documents/nf-core-sylensmodule/work/66/adf330cb667471f40141dc0818a9eb/9/SAMPLE2_PE_T1_2_fastqc.zip
