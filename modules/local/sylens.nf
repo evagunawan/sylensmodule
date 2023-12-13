@@ -5,8 +5,6 @@ process RUN_SYLENS {
 
     container='docker.io/evagunawan/sylens'
 
-    publishDir "results/"
-
     input:
         tuple val(meta), path(reads)
 
@@ -22,13 +20,15 @@ process RUN_SYLENS {
         def args = task.ext.args ?:"${meta.id}"
 
         """
-        sylens $reads \\
-        $params.subsample \\
-        $params.inputformat \\
-        $params.percentage \\
-        $params.compression \\
-        $params.outputformat \\
-        $params.seed \\
-        > sylens_log.txt
+        sylens $reads > sylens_log.txt
         """
+    
+    
+
+    // """
+    // cat <<-END_VERSIONS > versions.yml
+    // "${task.process}"
+        // sylens:: $VERSION
+    // END_VERSIONS
+    // """
 }
