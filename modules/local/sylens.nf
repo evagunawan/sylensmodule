@@ -9,8 +9,8 @@ process RUN_SYLENS {
         tuple val(meta), path(reads)
 
     output:
-        path "*_downsampled_*"  , emit: downsampled
-        path "sylens_log.txt"   , emit: log
+        path("*_downsampled_*")  , emit: downsampled
+        path("sylens_log.txt")   , emit: log
 
     when:
         task.ext.when == null || task.ext.when
