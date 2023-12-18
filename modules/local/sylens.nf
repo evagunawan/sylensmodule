@@ -19,13 +19,11 @@ process RUN_SYLENS {
 
     script:
     
-        def args = task.ext.args ?:"${meta.id}"
+        def args = task.ext.args ?:''
 
         """
-        sylens $reads > sylens_log.txt
+        sylens $reads ${params.subsample} ${params.percentage} ${params.filetype} ${params.compression} ${params.outputtype} ${params.seed} > sylens_log.txt
         """
-    
-    
 
     // """
     // cat <<-END_VERSIONS > versions.yml
