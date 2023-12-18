@@ -1,5 +1,7 @@
 process RUN_SYLENS {
-
+//Add a parameter and use detect to figure out if one input or two
+// sample name path read1 path read2
+// use nf-core test data set for sample sheets!
     tag "$reads"
     label 'process_single'
 
