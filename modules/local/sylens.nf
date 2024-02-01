@@ -22,11 +22,11 @@ process RUN_SYLENS {
         def args = task.ext.args ?:''
 
         """
-        sylens $reads ${params.subsample} ${params.percentage} ${params.filetype} ${params.compression} ${params.outputtype} ${params.seed} &> sylens_log.txt
+        sylens $reads ${params.subsample} ${params.percentage} ${params.filetype} ${params.compression} ${params.outputFormat} ${params.seed} ${params.outputType} &> sylens_log.txt
         """
 
     // """
-    // cat <<-END_VERSIONS > versions.yml
+    // cat <<-END_VERSIONS ml
     // "${task.process}"
         // sylens:: $VERSION
     // END_VERSIONS
