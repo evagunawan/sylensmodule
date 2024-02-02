@@ -19,12 +19,9 @@
 Sylens works by analyzing the ID configuration of the supplied FASTQ file(s). Currently, Sylens can analyze NCBI, Illumina, and Casava formatted FASTQ files. The program then determines if the input file is an interleaved or single end file or processes paired end files. If subsampling is desired, it will randomly subsample the FASTQ files and generate a seed for the run. This seed can be used to reproduce results, if desired. File formatting can be converted to and from ASCII 64 (FASTQ-solexa) and ASCII 33 (sanger) formats. The files can be written in both compressed and uncompressed format. 
 
 ## Usage
-
-:::note
 If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how
 to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline)
 with `-profile test` before running the workflow on actual data.
-:::
 
 Prepare a samplesheet with the input data as follows:
 
@@ -35,19 +32,26 @@ sample,fastq_1,fastq_2
 CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
 ```
 
-Each row denotes which files are for an individual analysis. A row with one fastq file (single-end/interleaved) will be run through sylens as that one file. A row with a pair of fastq files (paired end) will be run through sylens together .
+Each row denotes which files are for an individual analysis. A row with one fastq file (single-end/interleaved) will be run through sylens as that one file. A row with a pair of fastq files (paired end) will be run through sylens together as paired end files. 
 
--->
-
-Now, you can run the pipeline using:
-
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
+To run the module, use:
 
 ```bash
 nextflow run nf-core/sylensmodule \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR>
+```
+
+Sylens has a variety of parameters that can be added to customize the analysis. To find a comprehensive list, refer [here](https://github.com/evagunawan/SYLENS). To add parameters into the sylens module, use:
+
+```bash
+nextflow run nf-core/sylensmodule \
+   -profile <docker/singularity/.../institute> \
+   --input samplesheet.csv \
+   --outdir <OUTDIR> \
+   --subsample "-s 100" \
+   --
 ```
 
 :::warning

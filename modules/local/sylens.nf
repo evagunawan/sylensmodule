@@ -1,7 +1,5 @@
 process RUN_SYLENS {
-//Add a parameter and use detect to figure out if one input or two
-// sample name path read1 path read2
-// use nf-core test data set for sample sheets!
+
     tag "$reads"
     label 'process_single'
 
@@ -25,10 +23,4 @@ process RUN_SYLENS {
         sylens $reads ${params.subsample} ${params.percentage} ${params.filetype} ${params.compression} ${params.outputFormat} ${params.seed} ${params.outputType} &> sylens_log.txt
         """
 
-    // """
-    // cat <<-END_VERSIONS ml
-    // "${task.process}"
-        // sylens:: $VERSION
-    // END_VERSIONS
-    // """
 }
