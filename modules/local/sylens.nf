@@ -10,7 +10,7 @@ process RUN_SYLENS {
 
     output:
         path("*_downsampled_*")  , emit: downsampled
-        path("sylens_log.txt")   , emit: log
+        path("sylens_log_${reads[0]}.txt")   , emit: log
 
     when:
         task.ext.when == null || task.ext.when
@@ -20,7 +20,6 @@ process RUN_SYLENS {
         def args = task.ext.args ?:''
 
         """
-        sylens $reads ${params.subsample} ${params.percentage} ${params.filetype} ${params.compression} ${params.outputFormat} ${params.seed} ${params.outputType} &> sylens_log.txt
-        """
+        sylens $reads ${params.subsample} ${params.percentage} ${params.filetype} ${params.compression} ${params.outputFormat} ${params.seed} ${params.outputType} &> sylens_log_${reads[0]}.txt       """
 
 }
