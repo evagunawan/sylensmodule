@@ -35,7 +35,6 @@ include { INPUT_CHECK } from '../subworkflows/local/input_check'
 //
 // MODULE: Installed directly from nf-core/modules
 //
-
 include { RUN_SYLENS                  } from '../modules/local/sylens.nf'
 
 /*
@@ -43,9 +42,6 @@ include { RUN_SYLENS                  } from '../modules/local/sylens.nf'
     RUN MAIN WORKFLOW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-
-// Info required for completion email and summary
-// def multiqc_report = []
 
 workflow SYLENSMODULE {
 
